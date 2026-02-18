@@ -1,0 +1,74 @@
+# VPS Website Deployment Guide
+# Created: 2026-02-18
+
+==============================================
+  HOW TO HOST A WEBSITE ON VPS WITH GIT
+==============================================
+
+1. UPDATE SERVER
+----------------
+sudo apt update && sudo apt upgrade -y
+
+2. INSTALL NGINX
+----------------
+sudo apt install nginx -y
+sudo systemctl enable nginx
+sudo systemctl start nginx
+
+3. INSTALL GIT
+--------------
+sudo apt install git -y
+
+4. CLONE YOUR PROJECT
+---------------------
+cd /var/www
+git clone git@github.com:YOUR_USERNAME/YOUR_REPO.git myapp
+
+5. CONFIGURE NGINX
+------------------
+sudo nano /etc/nginx/sites-available/myapp
+
+  server {
+      listen 80;
+      server_name yourdomain.com;
+      root /var/www/myapp;
+      index index.html;
+      location / {
+          try_files $uri $uri/ =404;
+      }
+  }
+
+sudo ln -s /etc/nginx/sites-available/myapp /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+
+6. INSTALL SSL (HTTPS)
+----------------------
+sudo apt install certbot python3-certbot-nginx -y
+sudo certbot --nginx -d yourdomain.com
+
+7. FIREWALL SETUP
+-----------------
+sudo ufw allow OpenSSH
+sudo ufw allow 'Nginx Full'
+sudo ufw enable
+
+8. AUTO DEPLOY (Git Hook)
+--------------------------
+- Push from local  -->  GitHub  -->  VPS auto pulls
+- Use GitHub Actions (.github/workflows/deploy.yml)
+  OR
+- Use git bare repo + post-receive hook
+
+==============================================
+  QUICK COMMANDS REFERENCE
+==============================================
+
+Check Nginx status  : sudo systemctl status nginx
+Reload Nginx        : sudo systemctl reload nginx
+View Nginx logs     : sudo tail -f /var/log/nginx/access.log
+PM2 start app       : pm2 start npm --name "app" -- start
+PM2 restart         : pm2 restart app
+PM2 logs            : pm2 logs app
+
+==============================================

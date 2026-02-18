@@ -1,0 +1,6 @@
+# Ignore everything
+*
+
+# Except deploy.txt
+!deploy.txt
+!.gitignore
