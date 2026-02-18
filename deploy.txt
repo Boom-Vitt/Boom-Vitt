@@ -1,74 +1,139 @@
-# VPS Website Deployment Guide
-# Created: 2026-02-18
+============================================================
+  คู่มือการโฮสต์เว็บไซต์บน VPS นี้ (ภาษาไทย)
+  อัปเดต: 2026-02-18
+============================================================
 
-==============================================
-  HOW TO HOST A WEBSITE ON VPS WITH GIT
-==============================================
+---- ข้อมูล VPS ----
+ผู้ให้บริการ : Hostinger
+Hostname     : srv1068766.hstgr.cloud
+OS           : Ubuntu Linux (6.8.0-86-generic)
+RAM          : 7.8 GB
+Disk         : 96 GB (ใช้ไป 17 GB)
 
-1. UPDATE SERVER
-----------------
-sudo apt update && sudo apt upgrade -y
+------------------------------------------------------------
+  สถาปัตยกรรมของ VPS นี้
+------------------------------------------------------------
 
-2. INSTALL NGINX
-----------------
-sudo apt install nginx -y
-sudo systemctl enable nginx
-sudo systemctl start nginx
+Internet
+   │
+   ▼
+Traefik (Docker) port 80/443
+   │  ├── HTTP  → redirect ไป HTTPS อัตโนมัติ
+   │  └── HTTPS → SSL ด้วย Let's Encrypt (อัตโนมัติ)
+   │
+   ├──▶ srv1068766.hstgr.cloud       → clawdbot  (port 18789)
+   ├──▶ n8n.srv1068766.hstgr.cloud   → n8n       (port 5678)
+   └──▶ openclaw.srv1068766.hstgr.cloud → openclaw (port 18789)
 
-3. INSTALL GIT
---------------
-sudo apt install git -y
+------------------------------------------------------------
+  Container ที่รันอยู่
+------------------------------------------------------------
 
-4. CLONE YOUR PROJECT
----------------------
-cd /var/www
-git clone git@github.com:YOUR_USERNAME/YOUR_REPO.git myapp
+1. traefik   - Reverse Proxy + SSL อัตโนมัติ
+2. n8n       - Workflow Automation (n8n.srv1068766.hstgr.cloud)
 
-5. CONFIGURE NGINX
-------------------
-sudo nano /etc/nginx/sites-available/myapp
+------------------------------------------------------------
+  วิธีเพิ่มเว็บไซต์ใหม่บน VPS นี้
+------------------------------------------------------------
 
-  server {
-      listen 80;
-      server_name yourdomain.com;
-      root /var/www/myapp;
-      index index.html;
-      location / {
-          try_files $uri $uri/ =404;
-      }
-  }
+STEP 1: รัน App ของคุณบน port ใดก็ได้ เช่น 3000
+----------------------------------------------------
+  docker run -d --name myapp -p 3000:3000 my-image
+  หรือรัน Node.js/Python ตรงๆ บน port 3000
 
-sudo ln -s /etc/nginx/sites-available/myapp /etc/nginx/sites-enabled/
-sudo nginx -t
-sudo systemctl reload nginx
+STEP 2: สร้าง Traefik config ใหม่
+----------------------------------------------------
+  nano /root/traefik-config/myapp.yml
 
-6. INSTALL SSL (HTTPS)
-----------------------
-sudo apt install certbot python3-certbot-nginx -y
-sudo certbot --nginx -d yourdomain.com
+  ใส่เนื้อหาดังนี้:
 
-7. FIREWALL SETUP
------------------
-sudo ufw allow OpenSSH
-sudo ufw allow 'Nginx Full'
-sudo ufw enable
+  http:
+    routers:
+      myapp:
+        rule: "Host(`myapp.srv1068766.hstgr.cloud`)"
+        service: myapp
+        entrypoints:
+          - websecure
+        tls:
+          certResolver: mytlschallenge
+    services:
+      myapp:
+        loadBalancer:
+          servers:
+            - url: "http://host.docker.internal:3000"
 
-8. AUTO DEPLOY (Git Hook)
---------------------------
-- Push from local  -->  GitHub  -->  VPS auto pulls
-- Use GitHub Actions (.github/workflows/deploy.yml)
-  OR
-- Use git bare repo + post-receive hook
+STEP 3: Traefik โหลด config อัตโนมัติ (ไม่ต้อง restart)
+----------------------------------------------------
+  ตรวจสอบว่าเว็บขึ้นแล้ว:
+  curl https://myapp.srv1068766.hstgr.cloud
 
-==============================================
-  QUICK COMMANDS REFERENCE
-==============================================
+------------------------------------------------------------
+  วิธี Deploy จาก Git (Auto Deploy)
+------------------------------------------------------------
 
-Check Nginx status  : sudo systemctl status nginx
-Reload Nginx        : sudo systemctl reload nginx
-View Nginx logs     : sudo tail -f /var/log/nginx/access.log
-PM2 start app       : pm2 start npm --name "app" -- start
-PM2 restart         : pm2 restart app
-PM2 logs            : pm2 logs app
+STEP 1: Clone โปรเจกต์
+----------------------------------------------------
+  cd /var/www
+  git clone git@github.com:Boom-Vitt/YOUR_REPO.git myapp
+  cd myapp
 
-==============================================
+STEP 2: สร้าง GitHub Actions (.github/workflows/deploy.yml)
+----------------------------------------------------
+  name: Deploy to VPS
+  on:
+    push:
+      branches: [main]
+  jobs:
+    deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deploy via SSH
+          uses: appleboy/ssh-action@v1.0.3
+          with:
+            host: ${{ secrets.VPS_HOST }}
+            username: root
+            key: ${{ secrets.VPS_SSH_KEY }}
+            script: |
+              cd /var/www/myapp
+              git pull origin main
+              docker compose up -d --build
+
+STEP 3: ตั้งค่า GitHub Secrets
+----------------------------------------------------
+  VPS_HOST    = srv1068766.hstgr.cloud
+  VPS_SSH_KEY = (private key จาก ~/.ssh/id_ed25519)
+
+------------------------------------------------------------
+  ไฟล์ Config สำคัญ
+------------------------------------------------------------
+
+/root/docker-compose.yml          - Traefik + n8n services
+/root/traefik-config/             - Dynamic routing rules
+/root/traefik-config/openclaw.yml - openclaw.srv1068766.hstgr.cloud
+/root/traefik-config/clawdbot.yml - srv1068766.hstgr.cloud
+/root/.env                        - Domain, SSL email, timezone
+
+------------------------------------------------------------
+  คำสั่งที่ใช้บ่อย
+------------------------------------------------------------
+
+ดู container ที่รัน  : docker ps
+ดู log traefik      : docker logs root-traefik-1 -f
+ดู log n8n          : docker logs root-n8n-1 -f
+restart ทุก service : docker compose restart
+หยุด service        : docker compose down
+เริ่ม service       : docker compose up -d
+ดื้ disk            : df -h
+ดู RAM              : free -h
+
+------------------------------------------------------------
+  ระบบ Security ที่ติดตั้งอยู่แล้ว
+------------------------------------------------------------
+
+- Fail2Ban     : ป้องกัน brute force SSH
+- ClamAV       : สแกนไวรัส
+- Monarx Agent : ตรวจจับมัลแวร์
+- Traefik TLS  : HTTPS อัตโนมัติทุก subdomain
+- UFW Firewall : เปิดเฉพาะ port 80, 443, 22
+
+============================================================
