@@ -14,7 +14,7 @@ FONT = "Inter, 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans Thai', 'Leelawade
 PHRASES = [
     "สร้าง AI ภาษาไทยแบบโอเพนซอร์ส",
     "เจ้าของ Kruoop.com · Seeneo.ai",
-    "Company OS (ERP) · Claude Code plugins",
+    "Open-source ERP · Claude Code plugins",
     "BoomBigNose Lab — ASR ภาษาไทยถิ่น",
     "YouTube 220K · สอน AI ให้คนไทย",
 ]
