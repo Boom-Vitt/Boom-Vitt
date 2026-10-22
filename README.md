@@ -2,7 +2,9 @@
 
 <img src="assets/header.svg" width="100%" alt="BoomBigNose — AI ภาษาไทย · โอเพนซอร์ส · Claude Code" />
 
-<!-- INTRO-VIDEO -->
+https://github.com/user-attachments/assets/6a86e175-ddb7-420f-9075-9c5adfdc6476
+
+<sub>🔊 กดเล่นพร้อมเสียง · เพลงแต่งใหม่ด้วย AI</sub>
 
 <a href="https://boombignose.org"><img src="https://img.shields.io/badge/boombignose.org-0b1220?style=for-the-badge&logo=googlechrome&logoColor=5eead4" alt="Website" /></a>
 <a href="https://www.youtube.com/@BoomBigNose"><img src="https://img.shields.io/badge/YouTube-@BoomBigNose-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" /></a>
