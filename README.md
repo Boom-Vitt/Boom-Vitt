@@ -25,7 +25,7 @@ https://github.com/user-attachments/assets/6a86e175-ddb7-420f-9075-9c5adfdc6476
 
 - 🏫 **เจ้าของ [Kruoop.com](https://kruoop.com):** แหล่งเรียนรู้ AI และคอมมูนิตี้คนทำ AI ภาษาไทย
 - 🎞️ **เจ้าของ [Seeneo.ai](https://seeneo.ai):** ตัดต่อวิดีโอด้วย AI
-- 🏢 **[BoomBigNose ERP](https://github.com/Boom-Vitt/boombignose-erp):** ERP โอเพนซอร์สสำหรับบริษัทยุค AI (CRM, finance, automation)
+- 🏢 **[BoomBigNose ERP](https://github.com/Boom-Vitt/boombignose-erp):** Company OS สำหรับบริษัทยุค AI (CRM, finance, automation)
 - 🧪 **[BoomBigNose Lab](https://huggingface.co/BoomBigNoseLab):** โมเดล ASR ภาษาไทยถิ่น ชนะขาดในภาษามลายูปัตตานีและคำเมือง เมื่อวัดด้วยมาตรฐานเดียวกับโมเดลเปิดทุกตัว
 - 🤖 **Claude Code:** skills, plugins, mods และ agent workflow ภาษาไทย
 - 🎬 **คอนเทนต์:** สอน AI ให้ผู้ติดตาม 220K บน [YouTube](https://www.youtube.com/@BoomBigNose) ทำคลิปอธิบาย 3D และ MV ด้วย AI
