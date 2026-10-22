@@ -1,4 +1,4 @@
-name: snake
+name: profile-assets
 on:
   schedule:
     - cron: "0 0 * * *"
@@ -18,6 +18,12 @@ jobs:
           outputs: |
             dist/snake.svg?color_snake=#14b8a6&color_dots=#ebedf0,#a7f3d0,#5eead4,#14b8a6,#0f766e
             dist/snake-dark.svg?palette=github-dark&color_snake=#5eead4&color_dots=#161b22,#134e4a,#0f766e,#14b8a6,#5eead4
+      - uses: actions/checkout@v4
+        with:
+          path: src
+      - run: python3 src/tools/trophies.py ${{ github.repository_owner }} dist/trophies.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
