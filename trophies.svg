@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1198" height="180" viewBox="0 0 1198 180" role="img" aria-label="GitHub trophies of Boom-Vitt">
+<style>text{font-family:Inter,'Segoe UI',Arial,sans-serif}.rk{font-size:15px;font-weight:800;fill:#0b1220}.nm{font-size:15px;font-weight:600;fill:#cbd5e1}
+.v{font-size:20px;font-weight:800}.in{animation:up .8s cubic-bezier(.2,.8,.2,1) both}@keyframes up{from{opacity:0;transform:translateY(12px)}}
+@media (prefers-reduced-motion:reduce){.in{animation:none}}</style>
+<g transform="translate(10,10)"><g class="in" style="animation-delay:0.00s">
+<rect width="186" height="160" rx="16" fill="#111a2e" stroke="#FBBF24" stroke-opacity=".5"/>
+<path d="M68 34h50v10c0 16-11 28-25 28s-25-12-25-28z" fill="#FBBF24"/><path d="M68 40h-10c0 10 6 16 13 17M118 40h10c0 10-6 16-13 17" fill="none" stroke="#FBBF24" stroke-width="4"/>
+<rect x="88" y="72" width="10" height="12" fill="#FBBF24"/><rect x="76" y="84" width="34" height="8" rx="3" fill="#FBBF24"/>
+<text x="93" y="58" text-anchor="middle" class="rk">S</text>
+<text x="93" y="118" text-anchor="middle" class="nm">Stars</text>
+<text x="93" y="142" text-anchor="middle" class="v" fill="#FBBF24">201</text></g></g><g transform="translate(208,10)"><g class="in" style="animation-delay:0.12s">
+<rect width="186" height="160" rx="16" fill="#111a2e" stroke="#5EEAD4" stroke-opacity=".5"/>
+<path d="M68 34h50v10c0 16-11 28-25 28s-25-12-25-28z" fill="#5EEAD4"/><path d="M68 40h-10c0 10 6 16 13 17M118 40h10c0 10-6 16-13 17" fill="none" stroke="#5EEAD4" stroke-width="4"/>
+<rect x="88" y="72" width="10" height="12" fill="#5EEAD4"/><rect x="76" y="84" width="34" height="8" rx="3" fill="#5EEAD4"/>
+<text x="93" y="58" text-anchor="middle" class="rk">AAA</text>
+<text x="93" y="118" text-anchor="middle" class="nm">Contributions</text>
+<text x="93" y="142" text-anchor="middle" class="v" fill="#5EEAD4">742</text></g></g><g transform="translate(406,10)"><g class="in" style="animation-delay:0.24s">
+<rect width="186" height="160" rx="16" fill="#111a2e" stroke="#5EEAD4" stroke-opacity=".5"/>
+<path d="M68 34h50v10c0 16-11 28-25 28s-25-12-25-28z" fill="#5EEAD4"/><path d="M68 40h-10c0 10 6 16 13 17M118 40h10c0 10-6 16-13 17" fill="none" stroke="#5EEAD4" stroke-width="4"/>
+<rect x="88" y="72" width="10" height="12" fill="#5EEAD4"/><rect x="76" y="84" width="34" height="8" rx="3" fill="#5EEAD4"/>
+<text x="93" y="58" text-anchor="middle" class="rk">A</text>
+<text x="93" y="118" text-anchor="middle" class="nm">Followers</text>
+<text x="93" y="142" text-anchor="middle" class="v" fill="#5EEAD4">39</text></g></g><g transform="translate(604,10)"><g class="in" style="animation-delay:0.36s">
+<rect width="186" height="160" rx="16" fill="#111a2e" stroke="#5EEAD4" stroke-opacity=".5"/>
+<path d="M68 34h50v10c0 16-11 28-25 28s-25-12-25-28z" fill="#5EEAD4"/><path d="M68 40h-10c0 10 6 16 13 17M118 40h10c0 10-6 16-13 17" fill="none" stroke="#5EEAD4" stroke-width="4"/>
+<rect x="88" y="72" width="10" height="12" fill="#5EEAD4"/><rect x="76" y="84" width="34" height="8" rx="3" fill="#5EEAD4"/>
+<text x="93" y="58" text-anchor="middle" class="rk">AAA</text>
+<text x="93" y="118" text-anchor="middle" class="nm">Pull requests</text>
+<text x="93" y="142" text-anchor="middle" class="v" fill="#5EEAD4">119</text></g></g><g transform="translate(802,10)"><g class="in" style="animation-delay:0.48s">
+<rect width="186" height="160" rx="16" fill="#111a2e" stroke="#475569" stroke-opacity=".5"/>
+<path d="M68 34h50v10c0 16-11 28-25 28s-25-12-25-28z" fill="#475569"/><path d="M68 40h-10c0 10 6 16 13 17M118 40h10c0 10-6 16-13 17" fill="none" stroke="#475569" stroke-width="4"/>
+<rect x="88" y="72" width="10" height="12" fill="#475569"/><rect x="76" y="84" width="34" height="8" rx="3" fill="#475569"/>
+<text x="93" y="58" text-anchor="middle" class="rk">?</text>
+<text x="93" y="118" text-anchor="middle" class="nm">Issues</text>
+<text x="93" y="142" text-anchor="middle" class="v" fill="#475569">0</text></g></g><g transform="translate(1000,10)"><g class="in" style="animation-delay:0.60s">
+<rect width="186" height="160" rx="16" fill="#111a2e" stroke="#FBBF24" stroke-opacity=".5"/>
+<path d="M68 34h50v10c0 16-11 28-25 28s-25-12-25-28z" fill="#FBBF24"/><path d="M68 40h-10c0 10 6 16 13 17M118 40h10c0 10-6 16-13 17" fill="none" stroke="#FBBF24" stroke-width="4"/>
+<rect x="88" y="72" width="10" height="12" fill="#FBBF24"/><rect x="76" y="84" width="34" height="8" rx="3" fill="#FBBF24"/>
+<text x="93" y="58" text-anchor="middle" class="rk">S</text>
+<text x="93" y="118" text-anchor="middle" class="nm">Repositories</text>
+<text x="93" y="142" text-anchor="middle" class="v" fill="#FBBF24">61</text></g></g>
+</svg>
