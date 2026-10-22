@@ -7,7 +7,9 @@ https://github.com/user-attachments/assets/6a86e175-ddb7-420f-9075-9c5adfdc6476
 <sub>🔊 กดเล่นพร้อมเสียง · เพลงแต่งใหม่ด้วย AI</sub>
 
 <a href="https://boombignose.org"><img src="https://img.shields.io/badge/boombignose.org-0b1220?style=for-the-badge&logo=googlechrome&logoColor=5eead4" alt="Website" /></a>
-<a href="https://www.youtube.com/@BoomBigNose"><img src="https://img.shields.io/badge/YouTube-@BoomBigNose-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" /></a>
+<a href="https://www.youtube.com/@BoomBigNose"><img src="https://img.shields.io/badge/YouTube-220K-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube 220K" /></a>
+<a href="https://kruoop.com"><img src="https://img.shields.io/badge/Kruoop.com-AI%20Community-14b8a6?style=for-the-badge&labelColor=0b1220" alt="Kruoop.com" /></a>
+<a href="https://seeneo.ai"><img src="https://img.shields.io/badge/Seeneo.ai-AI%20Video-a78bfa?style=for-the-badge&labelColor=0b1220" alt="Seeneo.ai" /></a>
 <a href="https://huggingface.co/BoomBigNoseLab"><img src="https://img.shields.io/badge/Hugging%20Face-BoomBigNose%20Lab-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face" /></a>
 <a href="https://lin.ee/wtRv0Wj"><img src="https://img.shields.io/badge/LINE-OA-06C755?style=for-the-badge&logo=line&logoColor=white" alt="LINE" /></a>
 
@@ -21,9 +23,12 @@ https://github.com/user-attachments/assets/6a86e175-ddb7-420f-9075-9c5adfdc6476
 
 ผมทำ **AI ภาษาไทยแบบโอเพนซอร์ส** ให้คนไทยใช้ได้จริง ตั้งแต่ skill และ plugin ของ Claude Code ไปจนถึงโมเดลรู้จำเสียงภาษาไทยถิ่น
 
+- 🏫 **เจ้าของ [Kruoop.com](https://kruoop.com):** แหล่งเรียนรู้ AI และคอมมูนิตี้คนทำ AI ภาษาไทย
+- 🎞️ **เจ้าของ [Seeneo.ai](https://seeneo.ai):** ตัดต่อวิดีโอด้วย AI
+- 🏢 **[BoomBigNose ERP](https://github.com/Boom-Vitt/boombignose-erp):** ERP โอเพนซอร์สสำหรับบริษัทยุค AI (CRM, finance, automation)
 - 🧪 **[BoomBigNose Lab](https://huggingface.co/BoomBigNoseLab):** โมเดล ASR ภาษาไทยถิ่น ชนะขาดในภาษามลายูปัตตานีและคำเมือง เมื่อวัดด้วยมาตรฐานเดียวกับโมเดลเปิดทุกตัว
 - 🤖 **Claude Code:** skills, plugins, mods และ agent workflow ภาษาไทย
-- 🎬 **คอนเทนต์:** สอน AI บน [YouTube](https://www.youtube.com/@BoomBigNose) ทำคลิปอธิบาย 3D และ MV ด้วย AI
+- 🎬 **คอนเทนต์:** สอน AI ให้ผู้ติดตาม 220K บน [YouTube](https://www.youtube.com/@BoomBigNose) ทำคลิปอธิบาย 3D และ MV ด้วย AI
 
 ## 🚀 ผลงานเด่น
 
@@ -93,6 +98,12 @@ Quant dashboard ไฟล์ HTML เดียว (TradingView + 3D) พร้�
   <img src="https://img.shields.io/badge/Claude%20Code-D97757?style=for-the-badge&logo=claude&logoColor=white" alt="Claude Code" />
   <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face" />
   <img src="https://img.shields.io/badge/RunPod-673AB7?style=for-the-badge&logoColor=white" alt="RunPod" />
+</p>
+
+## 🏆 ถ้วยรางวัล
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Boom-Vitt/Boom-Vitt/output/trophies.svg" width="100%" alt="GitHub trophies" />
 </p>
 
 ## 📈 กิจกรรม
